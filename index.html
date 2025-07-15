@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malla Curricular - Bioquímica y Farmacia</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Malla Curricular - Bioquímica y Farmacia</h1>
+    
+    <div class="legend">
+        <div class="legend-item">
+            <div class="color-box locked"></div>
+            <span>No disponible (requisitos no cumplidos)</span>
+        </div>
+        <div class="legend-item">
+            <div class="color-box unlocked"></div>
+            <span>Disponible (requisitos cumplidos)</span>
+        </div>
+        <div class="legend-item">
+            <div class="color-box completed"></div>
+            <span>Aprobada</span>
+        </div>
+        <div class="legend-item">
+            <span>🔒 = Requisito obligatorio</span>
+        </div>
+        <div class="legend-item">
+            <span>🔁 = Conocimiento recomendado</span>
+        </div>
+    </div>
+
+    <div class="grid-container">
+        <!-- Año 1 - Semestre 1 -->
+        <div class="semester">
+            <h2>Primer Año - Primer Semestre</h2>
+            <div class="course" id="matematica" onclick="toggleCourse('matematica')" data-req="">Matemática 🔓</div>
+            <div class="course" id="fisica" onclick="toggleCourse('fisica')" data-req="">Física 🔓</div>
+            <div class="course" id="quimica-general" onclick="toggleCourse('quimica-general')" data-req="">Química General 🔓</div>
+            <div class="course" id="biologia" onclick="toggleCourse('biologia')" data-req="">Biología 🔓</div>
+            <div class="course" id="expresion-oral" onclick="toggleCourse('expresion-oral')" data-req="">Expresión Oral y Escrita 🔓</div>
+            <div class="course" id="ingles-tecnico-i" onclick="toggleCourse('ingles-tecnico-i')" data-req="">Inglés Técnico I 🔓</div>
+        </div>
+
+        <!-- Año 1 - Semestre 2 -->
+        <div class="semester">
+            <h2>Primer Año - Segundo Semestre</h2>
+            <div class="course" id="quimica-inorganica" onclick="toggleCourse('quimica-inorganica')" data-req="quimica-general">Química Inorgánica 🔒</div>
+            <div class="course" id="quimica-organica-i" onclick="toggleCourse('quimica-organica-i')" data-req="quimica-general">Química Orgánica I 🔒</div>
+            <div class="course" id="botanica" onclick="toggleCourse('botanica')" data-req="biologia" data-req-type="recommended">Botánica 🔁</div>
+            <div class="course" id="anatomia" onclick="toggleCourse('anatomia')" data-req="biologia" data-req-type="recommended">Anatomía Humana 🔁</div>
+            <div class="course" id="estadistica" onclick="toggleCourse('estadistica')" data-req="">Estadística 🔓</div>
+            <div class="course" id="ingles-tecnico-ii" onclick="toggleCourse('ingles-tecnico-ii')" data-req="ingles-tecnico-i">Inglés Técnico II 🔒</div>
+        </div>
+
+        <!-- Año 2 - Semestre 3 -->
+        <div class="semester">
+            <h2>Segundo Año - Tercer Semestre</h2>
+            <div class="course" id="fisicoquimica" onclick="toggleCourse('fisicoquimica')" data-req="quimica-inorganica,quimica-general">Fisicoquímica 🔒</div>
+            <div class="course" id="quimica-organica-ii" onclick="toggleCourse('quimica-organica-ii')" data-req="quimica-organica-i">Química Orgánica II 🔒</div>
+            <div class="course" id="quimica-analitica-cualitativa" onclick="toggleCourse('quimica-analitica-cualitativa')" data-req="quimica-general,quimica-inorganica" data-req-type="recommended">Química Analítica Cualitativa 🔁</div>
+            <div class="course" id="fisiologia" onclick="toggleCourse('fisiologia')" data-req="anatomia,biologia" data-req-type="recommended">Fisiología 🔁</div>
+            <div class="course" id="salud-publica" onclick="toggleCourse('salud-publica')" data-req="">Salud Pública e Interculturalidad 🔓</div>
+            <div class="course" id="metodologia" onclick="toggleCourse('metodologia')" data-req="">Metodología de la Investigación 🔓</div>
+        </div>
+
+        <!-- Año 2 - Semestre 4 -->
+        <div class="semester">
+            <h2>Segundo Año - Cuarto Semestre</h2>
+            <div class="course" id="quimica-analitica-cuantitativa" onclick="toggleCourse('quimica-analitica-cuantitativa')" data-req="quimica-analitica-cualitativa">Química Analítica Cuantitativa 🔒</div>
+            <div class="course" id="genetica" onclick="toggleCourse('genetica')" data-req="biologia" data-req-type="recommended">Genética 🔁</div>
+            <div class="course" id="farmacognosia-i" onclick="toggleCourse('farmacognosia-i')" data-req="quimica-organica-i" data-req-type="recommended">Farmacognosia I 🔁</div>
+            <div class="course" id="fisiopatologia" onclick="toggleCourse('fisiopatologia')" data-req="fisiologia">Fisiopatología 🔒</div>
+            <div class="course" id="enzimologia" onclick="toggleCourse('enzimologia')" data-req="fisicoquimica,fisiologia" data-req-type="recommended">Enzimología 🔁</div>
+        </div>
+
+        <!-- Año 3 - Semestre 5 -->
+        <div class="semester">
+            <h2>Tercer Año - Quinto Semestre</h2>
+            <div class="course" id="microbiologia-i" onclick="toggleCourse('microbiologia-i')" data-req="biologia,fisiologia" data-req-type="recommended">Microbiología I 🔁</div>
+            <div class="course" id="bioquimica-i" onclick="toggleCourse('bioquimica-i')" data-req="quimica-organica-ii">Bioquímica I 🔒</div>
+            <div class="course" id="farmacognosia-ii" onclick="toggleCourse('farmacognosia-ii')" data-req="farmacognosia-i">Farmacognosia II 🔒</div>
+            <div class="course" id="bromatologia" onclick="toggleCourse('bromatologia')" data-req="quimica-organica-i,quimica-analitica-cuantitativa" data-req-type="recommended">Bromatología 🔁</div>
+            <div class="course" id="analisis-instrumental" onclick="toggleCourse('analisis-instrumental')" data-req="quimica-analitica-cuantitativa">Análisis Instrumental 🔒</div>
+            <div class="course" id="inmunologia" onclick="toggleCourse('inmunologia')" data-req="biologia,fisiologia" data-req-type="recommended">Inmunología 🔁</div>
+        </div>
+
+        <!-- Año 3 - Semestre 6 -->
+        <div class="semester">
+            <h2>Tercer Año - Sexto Semestre</h2>
+            <div class="course" id="microbiologia-ii" onclick="toggleCourse('microbiologia-ii')" data-req="microbiologia-i">Microbiología II 🔒</div>
+            <div class="course" id="bioquimica-ii" onclick="toggleCourse('bioquimica-ii')" data-req="bioquimica-i">Bioquímica II 🔒</div>
+            <div class="course" id="hematologia-i" onclick="toggleCourse('hematologia-i')" data-req="inmunologia" data-req-type="recommended">Hematología I 🔁</div>
+            <div class="course" id="parasitologia-i" onclick="toggleCourse('parasitologia-i')" data-req="biologia" data-req-type="recommended">Parasitología I 🔁</div>
+            <div class="course" id="citologia" onclick="toggleCourse('citologia')" data-req="anatomia,biologia" data-req-type="recommended">Citología 🔁</div>
+            <div class="course" id="farmacologia-i" onclick="toggleCourse('farmacologia-i')" data-req="fisiopatologia,bioquimica-i" data-req-type="recommended">Farmacología I 🔁</div>
+        </div>
+
+        <!-- Año 4 - Semestre 7 -->
+        <div class="semester">
+            <h2>Cuarto Año - Séptimo Semestre</h2>
+            <div class="course" id="toxicologia-i" onclick="toggleCourse('toxicologia-i')" data-req="farmacologia-i" data-req-type="recommended">Toxicología I 🔁</div>
+            <div class="course" id="nutricion" onclick="toggleCourse('nutricion')" data-req="bioquimica-ii" data-req-type="recommended">Nutrición 🔁</div>
+            <div class="course" id="hematologia-ii" onclick="toggleCourse('hematologia-ii')" data-req="hematologia-i">Hematología II 🔒</div>
+            <div class="course" id="parasitologia-ii" onclick="toggleCourse('parasitologia-ii')" data-req="parasitologia-i">Parasitología II 🔒</div>
+            <div class="course" id="tecnologia-farmaceutica-i" onclick="toggleCourse('tecnologia-farmaceutica-i')" data-req="quimica-organica-i,farmacologia-i" data-req-type="recommended">Tecnología Farmacéutica I 🔁</div>
+            <div class="course" id="farmacologia-ii" onclick="toggleCourse('farmacologia-ii')" data-req="farmacologia-i">Farmacología II 🔒</div>
+            <div class="course" id="microbiologia-industrial" onclick="toggleCourse('microbiologia-industrial')" data-req="microbiologia-ii">Microbiología Industrial 🔒</div>
+        </div>
+
+        <!-- Año 4 - Semestre 8 -->
+        <div class="semester">
+            <h2>Cuarto Año - Octavo Semestre</h2>
+            <div class="course" id="toxicologia-ii" onclick="toggleCourse('toxicologia-ii')" data-req="toxicologia-i">Toxicología II 🔒</div>
+            <div class="course" id="analisis-clinico-i" onclick="toggleCourse('analisis-clinico-i')" data-req="bioquimica-i,microbiologia-i" data-req-type="recommended">Análisis Clínico I 🔁</div>
+            <div class="course" id="control-medicamentos-i" onclick="toggleCourse('control-medicamentos-i')" data-req="farmacologia-i,tecnologia-farmaceutica-i" data-req-type="recommended">Control de Medicamentos I 🔁</div>
+            <div class="course" id="biologia-molecular" onclick="toggleCourse('biologia-molecular')" data-req="genetica,bioquimica-i" data-req-type="recommended">Biología Molecular 🔁</div>
+            <div class="course" id="tecnologia-farmaceutica-ii" onclick="toggleCourse('tecnologia-farmaceutica-ii')" data-req="tecnologia-farmaceutica-i">Tecnología Farmacéutica II 🔒</div>
+            <div class="course" id="electiva" onclick="toggleCourse('electiva')" data-req="">Electiva 🔓</div>
+        </div>
+
+        <!-- Año 5 - Semestre 9 -->
+        <div class="semester">
+            <h2>Quinto Año - Noveno Semestre</h2>
+            <div class="course" id="farmacia-clinica" onclick="toggleCourse('farmacia-clinica')" data-req="farmacologia-i,toxicologia-i,fisiopatologia" data-req-type="recommended">Farmacia Clínica 🔁</div>
+            <div class="course" id="analisis-clinico-ii" onclick="toggleCourse('analisis-clinico-ii')" data-req="analisis-clinico-i">Análisis Clínico II 🔒</div>
+            <div class="course" id="control-medicamentos-ii" onclick="toggleCourse('control-medicamentos-ii')" data-req="control-medicamentos-i">Control de Medicamentos II 🔒</div>
+            <div class="course" id="deontologia" onclick="toggleCourse('deontologia')" data-req="">Deontología y Legislación 🔓</div>
+            <div class="course" id="gestion" onclick="toggleCourse('gestion')" data-req="">Gestión y Administración 🔓</div>
+            <div class="course" id="practica-profesional" onclick="toggleCourse('practica-profesional')" data-req="farmacologia-i,toxicologia-i,fisiopatologia" data-req-type="recommended">Práctica Profesional 🔁</div>
+        </div>
+
+        <!-- Internado -->
+        <div class="semester">
+            <h2>Internado Rotatorio</h2>
+            <div class="course" id="internado" onclick="toggleCourse('internado')" data-req="all">🔒 Requiere aprobación de todas las materias previas</div>
+        </div>
+    </div>
+
+    <button onclick="resetAll()">Reiniciar Todo</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
